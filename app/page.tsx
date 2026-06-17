@@ -11,9 +11,9 @@ import { SocialModalProvider } from "@/components/social/SocialModalProvider";
 export default function Home() {
   return (
     <SocialModalProvider>
-      <main className="relative min-h-screen pb-28 md:pb-12">
+      <main className="mobile-page relative min-h-[100dvh] md:pb-12">
         <FloatingDecorations />
-        <div className="relative z-10 mx-auto max-w-2xl px-5 md:max-w-4xl md:px-8 lg:max-w-5xl">
+        <div className="mobile-container relative z-10 mx-auto w-full max-w-[430px] px-4 sm:max-w-lg sm:px-5 md:max-w-4xl md:px-8 lg:max-w-5xl">
           <Hero />
           <About />
           <Gallery />

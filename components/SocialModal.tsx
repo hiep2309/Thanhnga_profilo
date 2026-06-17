@@ -98,8 +98,8 @@ export default function SocialModal({
             <Dialog.Content asChild forceMount>
               <motion.div
                 className={cn(
-                  "glass-card fixed inset-x-0 bottom-0 z-50 mx-auto w-full max-w-[480px]",
-                  "rounded-t-[32px] border border-white/80 px-6 pb-8 pt-3 shadow-soft",
+                  "glass-card fixed inset-x-0 bottom-0 z-[60] mx-auto w-full max-w-[480px]",
+                  "rounded-t-[32px] border border-white/80 px-4 pb-[max(2rem,env(safe-area-inset-bottom))] pt-3 shadow-soft sm:px-6",
                   "focus:outline-none"
                 )}
                 initial={{ y: "100%" }}
@@ -139,11 +139,11 @@ export default function SocialModal({
                     />
                   </div>
 
-                  <h2 className="font-serif text-2xl font-semibold text-charcoal">
+                  <h2 className="font-serif text-xl font-semibold text-charcoal sm:text-2xl">
                     {displayPlatform.title}
                   </h2>
 
-                  <p className="mt-2 text-base text-charcoal/75">
+                  <p className="mt-2 break-all px-2 text-sm text-charcoal/75 sm:text-base">
                     {displayPlatform.content}
                   </p>
 

@@ -27,10 +27,10 @@ export default function Favorites() {
   };
 
   return (
-    <FadeIn id="favorites" className="py-10 md:py-14">
+    <FadeIn id="favorites" className="py-8 sm:py-10 md:py-14">
       <SectionHeader title="Favorites" />
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
         {favorites.map((category, index) => {
           const Icon = iconMap[category.icon];
           const isLiked = likedIds.has(category.id);
@@ -38,7 +38,7 @@ export default function Favorites() {
           return (
             <FadeInItem key={category.id} delay={index * 0.08}>
               <motion.article
-                className="glass-card relative overflow-hidden rounded-[28px] p-5 shadow-card md:rounded-[32px] md:p-6"
+                className="glass-card relative overflow-hidden rounded-[24px] p-4 shadow-card sm:rounded-[28px] sm:p-5 md:rounded-[32px] md:p-6"
                 whileHover={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 300, damping: 22 }}
               >

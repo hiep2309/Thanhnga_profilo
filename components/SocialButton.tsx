@@ -23,28 +23,31 @@ export default function SocialButton({
   index = 0,
 }: SocialButtonProps) {
   const { openModal } = useSocialModal();
+  const isPrimary = variant === "hero-primary";
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6 + index * 0.08, duration: 0.5 }}
-      whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
-      className={cn(variant === "hero-primary" && "col-span-2", className)}
+      className={cn(
+        "w-[9.75rem] shrink-0 md:w-auto",
+        className
+      )}
     >
       <Button
         type="button"
-        variant={variant === "hero-primary" ? "social" : "social-outline"}
+        variant={isPrimary ? "social" : "social-outline"}
         className={cn(
-          "w-full gap-2",
-          variant === "hero-primary" &&
+          "h-11 w-full gap-1.5 px-3 text-xs sm:h-auto sm:gap-2 sm:px-4 sm:text-sm",
+          isPrimary &&
             "border-0 bg-primary-pink text-white hover:bg-primary-pink/90"
         )}
         onClick={() => openModal(platformId)}
       >
         <SocialIcon id={platformId} className="h-4 w-4 shrink-0" />
-        {label}
+        <span className="truncate">{label}</span>
       </Button>
     </motion.div>
   );

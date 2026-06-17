@@ -33,7 +33,7 @@ export const viewport: Viewport = {
   themeColor: "#FFF8F8",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -46,7 +46,7 @@ export default function RootLayout({
       lang="vi"
       className={`${nunito.variable} ${cormorant.variable} ${dancingScript.variable} scroll-smooth`}
     >
-      <body className="bg-cream text-charcoal antialiased">
+      <body className="bg-cream text-charcoal antialiased safe-top">
         {children}
         <BottomNavigation />
       </body>

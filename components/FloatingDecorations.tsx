@@ -46,7 +46,7 @@ export default function FloatingDecorations() {
         <Blossom className="h-14 w-14 opacity-40" />
       </motion.div>
 
-      <div className="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-secondary-pink/80 via-secondary-pink/30 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-secondary-pink/80 via-secondary-pink/30 to-transparent sm:h-72" />
 
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-secondary-pink/50 to-transparent" />
     </div>
@@ -56,7 +56,7 @@ export default function FloatingDecorations() {
 export function HeroBlossomFrame() {
   return (
     <>
-      <div className="pointer-events-none absolute -left-2 top-0 w-28 opacity-80 md:w-36">
+      <div className="pointer-events-none absolute -left-1 top-0 w-20 opacity-70 sm:-left-2 sm:w-28 sm:opacity-80 md:w-36">
         <svg viewBox="0 0 120 120" className="w-full" aria-hidden="true">
           <path
             d="M10 80 Q30 40 60 20 Q90 40 110 70"
@@ -72,7 +72,7 @@ export function HeroBlossomFrame() {
           <circle cx="80" cy="38" r="4" fill="#F8C8D8" opacity="0.6" />
         </svg>
       </div>
-      <div className="pointer-events-none absolute -right-2 top-0 w-28 opacity-80 md:w-36">
+      <div className="pointer-events-none absolute -right-1 top-0 w-20 opacity-70 sm:-right-2 sm:w-28 sm:opacity-80 md:w-36">
         <svg viewBox="0 0 120 120" className="w-full" aria-hidden="true">
           <path
             d="M110 80 Q90 40 60 20 Q30 40 10 70"

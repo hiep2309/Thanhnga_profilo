@@ -26,7 +26,7 @@ export default function BottomNavigation() {
           }
         });
       },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+      { rootMargin: "-40% 0px -48% 0px", threshold: 0 }
     );
 
     sections.forEach((id) => {
@@ -40,15 +40,15 @@ export default function BottomNavigation() {
   const handleNavClick = (href: string, id: string) => {
     setActiveSection(id);
     const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
+    element?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-40 px-4 pb-4 md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 md:hidden"
       aria-label="Main navigation"
     >
-      <div className="glass-card mx-auto flex max-w-md items-center justify-around rounded-[28px] px-2 py-2 shadow-soft">
+      <div className="glass-card mx-auto flex max-w-[430px] items-center justify-around rounded-[28px] px-1 py-1.5 shadow-soft backdrop-blur-xl">
         {navItems.map((item) => {
           const Icon = iconMap[item.id as keyof typeof iconMap];
           const isActive = activeSection === item.id;
@@ -58,13 +58,13 @@ export default function BottomNavigation() {
               key={item.id}
               type="button"
               onClick={() => handleNavClick(item.href, item.id)}
-              className="relative flex min-h-[48px] min-w-[56px] flex-col items-center justify-center gap-0.5 rounded-2xl px-3 py-2 transition-colors"
+              className="relative flex min-h-[52px] min-w-[64px] flex-1 flex-col items-center justify-center gap-0.5 rounded-2xl px-2 py-1.5 transition-colors"
               aria-current={isActive ? "page" : undefined}
             >
               {isActive && (
                 <motion.span
                   layoutId="nav-indicator"
-                  className="absolute inset-0 rounded-2xl bg-primary-pink/25"
+                  className="absolute inset-1 rounded-2xl bg-primary-pink/25"
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
@@ -74,7 +74,7 @@ export default function BottomNavigation() {
                 }`}
               />
               <span
-                className={`relative text-[10px] font-medium transition-colors ${
+                className={`relative text-[10px] font-semibold transition-colors ${
                   isActive ? "text-primary-pink" : "text-charcoal/45"
                 }`}
               >
