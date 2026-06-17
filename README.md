@@ -1,6 +1,6 @@
-# Hiệp — Personal Profile Website
+# Thanhnga_profilo
 
-A mobile-first personal profile website with a soft, feminine aesthetic — inspired by Instagram, Pinterest, and digital diary apps.
+Web cá nhân — mobile-first personal profile website with a soft, feminine aesthetic, inspired by Instagram, Pinterest, and digital diary apps.
 
 ## Tech Stack
 
@@ -9,6 +9,7 @@ A mobile-first personal profile website with a soft, feminine aesthetic — insp
 - **Tailwind CSS v4**
 - **Framer Motion**
 - **Lucide React**
+- **shadcn/ui**
 
 ## Getting Started
 
@@ -21,7 +22,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Customize
 
-Edit content in `lib/data.ts` — profile info, gallery images, memories, favorites, and contact links.
+- Content: `lib/data.ts`, `lib/social-config.ts`
+- Images: `public/images/` (see `public/images/README.md`)
 
 ## Build
 
