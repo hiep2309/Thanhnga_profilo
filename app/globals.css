@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-cream: #fff8f8;
+  --color-primary-pink: #f8c8d8;
+  --color-secondary-pink: #fbe7f0;
+  --color-lavender: #eedcff;
+  --color-accent: #d8b4fe;
+  --color-charcoal: #3a3a3a;
+  --color-muted: #8a8a8a;
+  --font-sans: var(--font-nunito), system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-script: var(--font-dancing), cursive;
+  --radius-soft: 24px;
+  --radius-softer: 32px;
+  --shadow-soft: 0 8px 32px rgba(248, 200, 216, 0.25);
+  --shadow-card: 0 4px 24px rgba(58, 58, 58, 0.06);
+  --shadow-glass: 0 8px 32px rgba(255, 255, 255, 0.4);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #f8c8d8;
+  color: #3a3a3a;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.masonry-grid {
+  column-gap: 12px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    column-gap: 16px;
+  }
+
+  .masonry-item {
+    margin-bottom: 16px;
+  }
+}
+
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #f8c8d8 8%,
+    #f8c8d8 92%,
+    transparent
+  );
+}
+
+@media (min-width: 768px) {
+  .timeline-line::before {
+    left: 24px;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 7s ease-in-out 1s infinite;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
